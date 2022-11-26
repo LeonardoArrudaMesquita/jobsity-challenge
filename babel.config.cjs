@@ -5,8 +5,8 @@ module.exports = {
     [
       "@babel/preset-react",
       {
-        runtime: "automatic" // Global react import!
-      }
-    ]
-  ]
+        runtime: "automatic", // Global react import!
+      },
+    ],
+  ],
 };
