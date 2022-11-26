@@ -1,4 +1,8 @@
-const reportWebVitals = (onPerfEntry) => {
+export interface ReportWebVitalsProps {
+  onPerfEntry?: () => void;
+}
+
+const reportWebVitals = ({ onPerfEntry }: ReportWebVitalsProps) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import("web-vitals").then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);

@@ -4,11 +4,10 @@ import { Provider as ReduxProvider } from "react-redux";
 
 import Main from "./Main";
 import reducers from "./reducers";
-import reportWebVitals from "./reportWebVitals";
-import getStore from "./store/getStore";
 
 // import main sass file
 import "./sass/app.scss";
+import getStore from "./store/getStore";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,4 +21,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals(() => console.log);
