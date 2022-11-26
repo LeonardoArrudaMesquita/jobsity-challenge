@@ -1,8 +1,6 @@
 import React from "react";
 
-import PropTypes from "prop-types";
-
-import Button from "./Button";
+import Button from "../atoms/Button";
 
 export interface CounterProps {
   limit: number;
@@ -34,9 +32,5 @@ function Counter({ limit }: CounterProps) {
     </div>
   );
 }
-
-Counter.propTypes = {
-  limit: PropTypes.number
-};
 
 export default Counter;

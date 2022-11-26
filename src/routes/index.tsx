@@ -4,8 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import App from "../pages/App";
-import Calendar from "../pages/Calendar";
+import App from "../components/views/App";
+import Calendar from "../components/views/Calendar";
 
 export default function Routes() {
   return (
