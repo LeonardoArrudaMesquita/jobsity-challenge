@@ -1,0 +1,17 @@
+@import "../../../global.scss";
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-side {
+  background-color: $color-primary;
+  width: 30%;
+  display: flex;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+}
