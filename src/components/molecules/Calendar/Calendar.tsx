@@ -1,6 +1,7 @@
 import "./styles.scss";
 
 import MonthList from "./MonthList";
+import WeekList from "./WeekList";
 import Year from "./Year";
 
 export interface Locales {
@@ -20,10 +21,6 @@ export default function Calendar({
   monthNames,
   monthNamesShort
 }: Locales) {
-  const now = new Date();
-  const defaultMonth = monthNamesShort[now.getMonth()];
-  const defaultDay = dayNamesShort[now.getDay()];
-
   return (
     <div className="calendar-container">
       <div className="year-container">
@@ -33,6 +30,7 @@ export default function Calendar({
         months={monthNamesShort}
         onMonthClick={() => console.log("month clicked")}
       />
+      <WeekList dayNamesShort={dayNamesShort} />
     </div>
   );
 }

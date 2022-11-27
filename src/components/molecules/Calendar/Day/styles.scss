@@ -1,0 +1,12 @@
+@import "../../../../global/palette.scss";
+
+.day {
+  flex: 1;
+  &--disabled {
+    color: $color-grey-light-1;
+  }
+
+  &--enabled {
+    color: $color-grey-light-2;
+  }
+}

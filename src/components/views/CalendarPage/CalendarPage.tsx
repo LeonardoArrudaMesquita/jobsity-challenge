@@ -14,10 +14,10 @@ function CalendarPage() {
     "Set",
     "Out",
     "Nov",
-    "Dez",
+    "Dez"
   ];
 
-  const daysNameShort = ["D", "S", "T", "Q", "Q", "S", "S"];
+  const daysNameShort = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 
   return (
     <div className="container">

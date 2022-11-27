@@ -1,11 +1,14 @@
 .calendar-container {
   width: 100%;
   padding: 2.5rem;
+
+  & > * {
+    margin-bottom: 2.5rem;
+  }
 }
 
 .year-container {
   text-align: right;
   display: flex;
   justify-content: end;
-  margin-bottom: 2.5rem;
 }
