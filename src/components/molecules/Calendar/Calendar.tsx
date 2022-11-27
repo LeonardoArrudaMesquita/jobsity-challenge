@@ -1,8 +1,8 @@
 import "./styles.scss";
 
-import MonthList from "./MonthList";
+import DayCells from "./DayCells";
+import Header from "./Header";
 import WeekList from "./WeekList";
-import Year from "./Year";
 
 export interface Locales {
   daysName?: string[];
@@ -22,15 +22,14 @@ export default function Calendar({
   monthNamesShort
 }: Locales) {
   return (
-    <div className="calendar-container">
-      <div className="year-container">
-        <Year />
-      </div>
-      <MonthList
-        months={monthNamesShort}
+    <div className="calendar">
+      <Header
+        monthNames={monthNamesShort}
+        dayNames={dayNamesShort}
         onMonthClick={() => console.log("month clicked")}
       />
       <WeekList dayNamesShort={dayNamesShort} />
+      <DayCells current={new Date()} />
     </div>
   );
 }

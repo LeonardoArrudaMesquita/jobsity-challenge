@@ -1,11 +1,11 @@
 @import "../../../../global/palette.scss";
 
 .week-list {
-  display: flex;
-  justify-content: space-between;
+  border: 0.1rem solid $color-grey-light-1;
 }
 
 .day-name-short-text {
   color: $color-grey-light-2;
   font-size: 1.6rem;
+  border-right: 0.1rem solid $color-grey-light-1;
 }

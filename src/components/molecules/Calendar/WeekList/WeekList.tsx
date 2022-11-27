@@ -6,9 +6,11 @@ export interface WeekListProps {
 
 export default function WeekList({ dayNamesShort }: WeekListProps) {
   return (
-    <div className="week-list">
+    <div className="row week-list">
       {dayNamesShort.map((dayName) => (
-        <span className="day-name-short-text">{dayName.toUpperCase()}</span>
+        <span className="col col-center day-name-short-text">
+          {dayName.toUpperCase()}
+        </span>
       ))}
     </div>
   );

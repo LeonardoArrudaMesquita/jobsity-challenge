@@ -3,14 +3,17 @@ import MonthButton from "../MonthButton";
 import "./styles.scss";
 
 export interface MonthListProps {
-  months: string[];
+  monthNames: string[];
   onMonthClick: () => void;
 }
 
-export default function MonthList({ months, onMonthClick }: MonthListProps) {
+export default function MonthList({
+  monthNames,
+  onMonthClick
+}: MonthListProps) {
   return (
     <div className="month-list-container">
-      {months.map((month) => (
+      {monthNames.map((month) => (
         <MonthButton month={month} onMonthClick={() => onMonthClick()} />
       ))}
     </div>

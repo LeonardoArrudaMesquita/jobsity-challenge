@@ -1,12 +1,19 @@
 @import "../../../../global/palette.scss";
 
 .day {
-  flex: 1;
   &--disabled {
     color: $color-grey-light-1;
   }
 
   &--enabled {
     color: $color-grey-light-2;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    position: absolute;
+    line-height: 1;
+    top: 0.75em;
+    right: 0.75em;
   }
 }
