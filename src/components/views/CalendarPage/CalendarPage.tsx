@@ -1,31 +1,31 @@
+import { useState } from "react";
 import Calendar from "../../molecules/Calendar";
 
 function CalendarPage() {
-  const monthNamesShort = [
-    "Jan",
-    "Fev",
-    "Mar",
-    "Abr",
-    "Mai",
-    "Jun",
-    "Jul",
-    "Ago",
-    "Set",
-    "Out",
-    "Nov",
-    "Dez"
-  ];
-
-  const daysNameShort = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+  const [current, setCurrent] = useState<Date>(new Date());
+  const locales = {
+    dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+    monthNamesShort: [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+    ]
+  };
 
   return (
     <div className="container">
       <div className="sidebar"></div>
       <div className="content">
-        <Calendar
-          monthNamesShort={monthNamesShort}
-          dayNamesShort={daysNameShort}
-        />
+        <Calendar current={current} setCurrent={setCurrent} locales={locales} />
       </div>
     </div>
   );

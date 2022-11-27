@@ -12,26 +12,26 @@
   &-left {
     width: 0;
     height: 0;
-    border-top: 5px solid transparent;
-    border-right: 10px solid #e8e8e8;
-    border-bottom: 5px solid transparent;
+    border-top: 0.5rem solid transparent;
+    border-right: 1rem solid #e8e8e8;
+    border-bottom: 0.5rem solid transparent;
     margin-right: 1.5rem;
 
     &:hover {
-      border-right: 10px solid $color-primary;
+      border-right: 1rem solid $color-primary;
     }
   }
 
   &-right {
     width: 0;
     height: 0;
-    border-top: 5px solid transparent;
-    border-left: 10px solid #e8e8e8;
-    border-bottom: 5px solid transparent;
+    border-top: 0.5rem solid transparent;
+    border-left: 1rem solid #e8e8e8;
+    border-bottom: 0.5rem solid transparent;
     margin-left: 1.5rem;
 
     &:hover {
-      border-right: 10px solid $color-primary;
+      border-left: 1rem solid $color-primary;
     }
   }
 }

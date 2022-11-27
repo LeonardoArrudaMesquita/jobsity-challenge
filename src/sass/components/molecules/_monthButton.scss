@@ -1,4 +1,9 @@
 .month-name-text {
   color: $color-grey-light-2;
   font-size: 1.6rem;
+
+  &__selected {
+    color: $color-primary;
+    font-size: 1.6rem;
+  }
 }
