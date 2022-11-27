@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Calendar from "../../molecules/Calendar";
+import ReminderForm from "../../organisms/ReminderForm";
+import ReminderList from "../../organisms/ReminderList/RemiderList";
 
 function CalendarPage() {
   const [current, setCurrent] = useState<Date>(new Date());
@@ -23,7 +25,9 @@ function CalendarPage() {
 
   return (
     <div className="container">
-      <div className="sidebar"></div>
+      <div className="sidebar">
+        <ReminderForm />
+      </div>
       <div className="content">
         <Calendar current={current} setCurrent={setCurrent} locales={locales} />
       </div>
