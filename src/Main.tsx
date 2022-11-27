@@ -1,6 +1,6 @@
 import Routes from "./routes";
 
-import "./global.scss";
+import "./global/global.scss";
 
 export default function Main() {
   return <Routes />;

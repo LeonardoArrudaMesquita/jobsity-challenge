@@ -1,0 +1,35 @@
+@import "../../../../global/palette.scss";
+
+.year {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    color: $color-grey-light-2;
+    font-size: 2.2rem;
+  }
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #e8e8e8;
+  border-bottom: 5px solid transparent;
+  margin-right: 1.5rem;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid #e8e8e8;
+  border-bottom: 5px solid transparent;
+  margin-left: 1.5rem;
+}
+.triangle-left:hover {
+  border-right: 10px solid $color-primary;
+}
+.triangle-right:hover {
+  border-left: 10px solid $color-primary;
+}

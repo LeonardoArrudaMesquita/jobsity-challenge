@@ -1,0 +1,11 @@
+@import "../../../../global/palette.scss";
+
+.month-list-container {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.line {
+  color: $color-grey-light-2;
+}

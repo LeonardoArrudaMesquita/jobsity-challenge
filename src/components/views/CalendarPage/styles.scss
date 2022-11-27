@@ -1,17 +1,17 @@
-@import "../../../global.scss";
+@import "../../../global/palette.scss";
 
 .container {
   display: flex;
   min-height: 100vh;
 }
 
-.left-side {
+.sidebar {
   background-color: $color-primary;
   width: 30%;
   display: flex;
 }
 
-.right-side {
+.content {
   flex: 1;
   display: flex;
 }
