@@ -1,5 +1,4 @@
 import Calendar from "../../molecules/Calendar";
-import "./styles.scss";
 
 function CalendarPage() {
   const monthNamesShort = [

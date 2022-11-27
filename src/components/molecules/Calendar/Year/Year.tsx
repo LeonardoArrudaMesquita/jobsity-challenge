@@ -1,5 +1,3 @@
-import "./styles.scss";
-
 export default function Year() {
   const now = new Date();
   return (

@@ -2,8 +2,6 @@ import MonthList from "../MonthList";
 import WeekList from "../WeekList";
 import Year from "../Year";
 
-import "./styles.scss";
-
 export interface HeaderProps {
   monthNames: string[];
   dayNames: string[];

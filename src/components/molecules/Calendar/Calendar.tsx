@@ -1,5 +1,3 @@
-import "./styles.scss";
-
 import DayCells from "./DayCells";
 import Header from "./Header";
 import WeekList from "./WeekList";

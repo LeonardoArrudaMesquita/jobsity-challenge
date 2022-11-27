@@ -1,0 +1,44 @@
+.calendar {
+  width: 100%;
+  padding: 2.5rem;
+
+  .days {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text-color-light);
+    font-size: 70%;
+    padding: 0.75em 0;
+    border-bottom: 1px solid $color-grey-light-1;
+  }
+
+  .body {
+    border: 0.1rem solid $color-grey-light-1;
+
+    .cell {
+      position: relative;
+      height: 8rem;
+      border-right: 1px solid $color-grey-light-1;
+      overflow: hidden;
+      background: var(--neutral-color);
+      transition: 0.25s ease-out;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .row {
+      border-bottom: 1px solid $color-grey-light-1;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .col {
+      flex-grow: 0;
+      flex-basis: calc(100% / 7);
+      width: calc(100% / 7);
+    }
+  }
+}

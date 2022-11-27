@@ -1,7 +1,5 @@
 import MonthButton from "../MonthButton";
 
-import "./styles.scss";
-
 export interface MonthListProps {
   monthNames: string[];
   onMonthClick: () => void;

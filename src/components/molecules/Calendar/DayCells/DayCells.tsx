@@ -10,8 +10,6 @@ import {
 
 import Day from "../Day";
 
-import "./styles.scss";
-
 export interface DayCellsProps {
   current: Date;
 }

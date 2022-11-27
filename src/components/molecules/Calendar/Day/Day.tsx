@@ -1,6 +1,5 @@
 import { format } from "date-fns";
 
-import "./styles.scss";
 export interface DayProps {
   currentDate: Date;
   disabled: boolean;
