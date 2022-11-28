@@ -1,4 +1,5 @@
-button {
+button,
+input[type="submit"] {
   text-transform: uppercase;
   outline: 0;
   background: white;
@@ -10,4 +11,8 @@ button {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+
+  &:disabled {
+    color: $color-grey-light-2;
+  }
 }

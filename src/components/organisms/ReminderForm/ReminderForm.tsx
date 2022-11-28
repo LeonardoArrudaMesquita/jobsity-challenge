@@ -1,20 +1,68 @@
-import axios from "axios";
-import Input from "../../atoms/Input";
+import { useForm } from "react-hook-form";
 
-export interface ReminderForm {}
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-export default function ReminderForm({}: ReminderForm) {
-  const handleCity = async (city: string) => {};
+import { Reminder } from "../../../types/Reminder";
+
+export interface ReminderFormProps {
+  onSave: (reminder: Reminder) => void;
+  onClose: () => void;
+  reminder?: Reminder;
+}
+
+const schema = yup
+  .object({
+    description: yup
+      .string()
+      .max(30, "Max. 30 characters")
+      .required("Description is required"),
+    time: yup.string().required("Time is required"),
+    city: yup.string().required("City is required")
+  })
+  .required();
+
+export default function ReminderForm({
+  onSave,
+  onClose,
+  reminder: reminderProp
+}: ReminderFormProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid }
+  } = useForm<Reminder>({
+    defaultValues: reminderProp,
+    resolver: yupResolver(schema)
+  });
 
   return (
-    <div className="reminder-form">
-      <span>Description:</span>
-      <textarea maxLength={30} />
-      <span>Time:</span>
-      <Input type="time" />
-      <span>City:</span>
-      <Input onChange={(event) => handleCity(event.target.value)} />
-      <button>Save</button>
-    </div>
+    <form className="reminder-form" onSubmit={handleSubmit(onSave)}>
+      <div className="mb-sm">
+        <label htmlFor="description">Description:</label>
+        <input {...register("description")} />
+        <p>{errors.description?.message}</p>
+      </div>
+
+      <div className="mb-sm">
+        <label htmlFor="time">Time:</label>
+        <input type="time" {...register("time")} />
+        <p className="mb-sm">{errors.time?.message}</p>
+      </div>
+
+      <div className="mb-sm">
+        <label htmlFor="city">City:</label>
+        <input {...register("city")} />
+        <p className="mb-sm">{errors.city?.message}</p>
+      </div>
+
+      <input
+        type="submit"
+        className="mt-md mb-sm"
+        value="Save"
+        disabled={!isValid}
+      />
+      <button onClick={() => onClose()}>Cancel</button>
+    </form>
   );
 }

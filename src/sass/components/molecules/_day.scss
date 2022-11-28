@@ -1,4 +1,7 @@
 .day {
+  display: flex;
+  flex-direction: column;
+
   &--disabled {
     cursor: not-allowed;
     color: $color-grey-light-1;
@@ -16,6 +19,15 @@
     top: 0.75em;
     right: 0.75em;
     color: $color-grey-light-2;
+  }
+
+  &__reminder {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: $color-primary;
   }
 
   &__selected {

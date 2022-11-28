@@ -1,5 +1,6 @@
 import { setYear, setMonth, setDate } from "date-fns";
 
+import { Reminder } from "../../../types/Reminder";
 import DayCells from "./DayCells";
 import Header from "./Header";
 import WeekList from "./WeekList";
@@ -13,12 +14,14 @@ export interface CalendarProps {
   locales: Locales;
   current: Date;
   setCurrent: (date: Date) => void;
+  reminders: Reminder[];
 }
 
 export default function Calendar({
   locales: { dayNamesShort, monthNamesShort },
   current,
-  setCurrent
+  setCurrent,
+  reminders
 }: CalendarProps) {
   const onMonthChange = (date: Date, monthNumber: number) => {
     const updatedDate = setMonth(date, monthNumber);
@@ -40,7 +43,6 @@ export default function Calendar({
       <Header
         current={current}
         monthNames={monthNamesShort}
-        dayNames={dayNamesShort}
         onYearChange={(year) => onYearChange(current, year)}
         onMonthChange={(monthNumber) => onMonthChange(current, monthNumber)}
       />
@@ -48,6 +50,7 @@ export default function Calendar({
       <DayCells
         current={current}
         onDayChange={(day) => onDayChange(current, day)}
+        reminders={reminders}
       />
     </div>
   );

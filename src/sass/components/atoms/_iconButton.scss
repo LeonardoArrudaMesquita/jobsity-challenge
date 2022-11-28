@@ -1,0 +1,11 @@
+.icon-button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  &:active &__icon {
+    filter: brightness(50%);
+  }
+}

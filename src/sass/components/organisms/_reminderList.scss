@@ -1,0 +1,12 @@
+.reminder {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+}
