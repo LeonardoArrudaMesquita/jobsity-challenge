@@ -1,9 +1,11 @@
 .day {
   &--disabled {
+    cursor: not-allowed;
     color: $color-grey-light-1;
   }
 
   &--enabled {
+    cursor: pointer;
     color: $color-grey-light-2;
   }
 
@@ -14,5 +16,16 @@
     top: 0.75em;
     right: 0.75em;
     color: $color-grey-light-2;
+  }
+
+  &__selected {
+    border-radius: 50px;
+    background-color: $color-primary;
+    color: white;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

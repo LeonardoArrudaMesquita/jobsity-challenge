@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Calendar from "../../molecules/Calendar";
 import ReminderForm from "../../organisms/ReminderForm";
-import ReminderList from "../../organisms/ReminderList/RemiderList";
 
 function CalendarPage() {
   const [current, setCurrent] = useState<Date>(new Date());
