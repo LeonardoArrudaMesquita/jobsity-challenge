@@ -4,6 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { Reminder } from "../../../types/Reminder";
+import useForecast from "../../../hooks/useForecast";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export interface ReminderFormProps {
   onSave: (reminder: Reminder) => void;
@@ -25,16 +28,25 @@ const schema = yup
 export default function ReminderForm({
   onSave,
   onClose,
-  reminder: reminderProp
+  reminder
 }: ReminderFormProps) {
+  // const [forecastCity, setForecastCity] = useState()
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isValid }
   } = useForm<Reminder>({
-    defaultValues: reminderProp,
+    defaultValues: reminder,
     resolver: yupResolver(schema)
   });
+  const formValues = watch();
+
+  const { getForecastByCity, forecast } = useForecast();
+
+  useEffect(() => {
+    getForecastByCity(formValues.city);
+  }, [formValues.city]);
 
   return (
     <form className="reminder-form" onSubmit={handleSubmit(onSave)}>
@@ -53,6 +65,9 @@ export default function ReminderForm({
       <div className="mb-sm">
         <label htmlFor="city">City:</label>
         <input {...register("city")} />
+        <p className="mb-sm">
+          Forecast: {forecast ? forecast : "Add a City, please!"}
+        </p>
         <p className="mb-sm">{errors.city?.message}</p>
       </div>
 
